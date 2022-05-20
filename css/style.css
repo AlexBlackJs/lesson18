@@ -143,13 +143,13 @@ body {
 .menu__item {
   font-weight: 700;
   font-size: 14px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .menu__item:hover {
   color: #34C759;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
 }
 
 .menu__item:not(:last-child) {
@@ -274,7 +274,9 @@ body {
 
 /*offer*/
 .offer {
-  background: url("../img/offer/bg.jpg") center/cover no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 26, 26, 0.0001)), to(#1A1A1A)), -webkit-gradient(linear, left bottom, left top, from(rgba(33, 33, 33, 0.5)), to(rgba(33, 33, 33, 0.5))), url("../img/offer/bg.jpg") center/cover no-repeat;
+  background: -o-linear-gradient(top, rgba(26, 26, 26, 0.0001) 0%, #1A1A1A 100%), -o-linear-gradient(bottom, rgba(33, 33, 33, 0.5), rgba(33, 33, 33, 0.5)), url("../img/offer/bg.jpg") center/cover no-repeat;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.0001) 0%, #1A1A1A 100%), linear-gradient(0deg, rgba(33, 33, 33, 0.5), rgba(33, 33, 33, 0.5)), url("../img/offer/bg.jpg") center/cover no-repeat;
   padding: 170px 0px 400px 0px;
 }
 
@@ -662,6 +664,7 @@ body {
   height: 100%;
   z-index: 1;
   border-radius: 6px;
+  opacity: 0.5;
 }
 
 .left-column__body {
@@ -848,6 +851,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 6px;
+  opacity: 0.5;
 }
 
 .right-column__text {
@@ -925,6 +929,9 @@ body {
 @media (max-width: 1140px) {
   [class*="__container"] {
     max-width: 1060px;
+  }
+  .work__item {
+    min-height: 170px;
   }
   .item-dishes__bottom {
     -webkit-box-orient: vertical;
@@ -1188,6 +1195,26 @@ body {
   }
 }
 
+@media (max-width: 390px) {
+  .right-column__info {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .right-column__meal-type {
+    margin: 0px 0px 7px 0px;
+  }
+  .right-column__date {
+    margin: 0px 0px 7px 0px;
+  }
+  .activity {
+    padding-left: 31px;
+  }
+}
+
 @media (max-width: 370px) {
   .offer__title {
     font-size: 20px;
@@ -1204,5 +1231,11 @@ body {
   }
   .recipes__header {
     margin: 0px 0px 20px 0px;
+  }
+  .right-column__text {
+    text-align: center;
+  }
+  .recipes .right-column__item {
+    padding: 15px;
   }
 }
